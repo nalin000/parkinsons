@@ -1,16 +1,10 @@
 import streamlit as st
 import numpy as np
 import pickle
-import os
-
-# Construct paths relative to the app.py file
-base_path = os.path.dirname(__file__)
-model_path = os.path.join(base_path, 'parkinsons_model.pkl')
-scaler_path = os.path.join(base_path, 'scaler.pkl')
 
 # Load the model and scaler
-model = pickle.load(open(model_path, 'rb'))
-scaler = pickle.load(open(scaler_path, 'rb'))
+model = pickle.load(open('parkinsons_model.pkl', 'rb'))
+scaler = pickle.load(open('scaler.pkl', 'rb'))
 
 st.title("🧠 Parkinson's Disease Prediction App")
 st.write("Enter voice measurements to check if the person is likely to have Parkinson's Disease:")
